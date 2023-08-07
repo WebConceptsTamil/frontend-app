@@ -8,6 +8,7 @@ import { BsPlusCircleFill } from "react-icons/bs";
 import { AiFillDelete } from "react-icons/ai";
 import { AiOutlineEdit } from "react-icons/ai";
 import { Link } from "react-router-dom";
+const BASE_URL = process.env.BACKEND_URL
 
 function PostList() {
   const [posts, setPosts] = useState([]);
@@ -30,7 +31,9 @@ function PostList() {
   };
 
   const getPosts = async () => {
-    const response = await fetch(`${process.env.BACKEND_URL}posts`, {
+    console.log(BASE_URL);
+    console.log(`${BASE_URL}/api/posts`);
+    const response = await fetch(`${BASE_URL}/api/posts`, {
       headers: {
         "Content-Type": "application/json",
       },
