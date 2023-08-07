@@ -7,14 +7,10 @@ import Button from "react-bootstrap/Button";
 import { BsPlusCircleFill } from "react-icons/bs";
 import { AiFillDelete } from "react-icons/ai";
 import { AiOutlineEdit } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
-
-
+import { Link } from "react-router-dom";
 const BASE_URL = process.env.REACT_APP_BACKEND_URL;
 
 function PostList() {
-  const navigate = useNavigate();
-
   const [posts, setPosts] = useState([]);
 
   const deletePost = async (id) => {
@@ -30,7 +26,7 @@ function PostList() {
       },
     });
     if (response.ok) {
-      navigate('/'); // Reload the page
+      await getPosts()
       console.log(response);
     }
   };
