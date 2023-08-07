@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
 import { Link,useNavigate } from "react-router-dom";
+const BASE_URL = process.env.REACT_APP_BACKEND_URL
 
 function AddPost() {
   const navigate = useNavigate()
