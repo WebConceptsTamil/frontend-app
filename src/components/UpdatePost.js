@@ -55,7 +55,7 @@ function UpdatePost({ id }) {
   useEffect(() => {
     const getSinglePost = async () => {
       const response = await fetch(
-        `${process.env.BACKEND_URL}/updatepost/${postId}`,
+        `${BASE_URL}/updatepost/${postId}`,
         {
           headers: {
             "Content-Type": "application/json",
