@@ -30,7 +30,7 @@ function PostList() {
   };
 
   const getPosts = async () => {
-    const response = await fetch(`${process.env.BACKEND_URL}api/posts`, {
+    const response = await fetch(`${process.env.BACKEND_URL}/posts`, {
       headers: {
         "Content-Type": "application/json",
       },
