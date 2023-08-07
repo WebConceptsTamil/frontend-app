@@ -55,7 +55,7 @@ function UpdatePost({ id }) {
   useEffect(() => {
     const getSinglePost = async () => {
       const response = await fetch(
-        `${BASE_URL}/updatepost/${postId}`,
+        `${BASE_URL}/api/updatepost/${postId}`,
         {
           headers: {
             "Content-Type": "application/json",
