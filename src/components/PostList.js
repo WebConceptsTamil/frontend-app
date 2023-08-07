@@ -8,7 +8,7 @@ import { BsPlusCircleFill } from "react-icons/bs";
 import { AiFillDelete } from "react-icons/ai";
 import { AiOutlineEdit } from "react-icons/ai";
 import { Link } from "react-router-dom";
-const BASE_URL = 'https://node-posts-api.onrender.com'
+const BASE_URL = process.env.BACKEND_URL
 
 
 function PostList() {
