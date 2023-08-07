@@ -20,7 +20,7 @@ function PostList() {
     if (!confirmation) {
       return;
     }
-    const response = await fetch(`${process.env.BACKEND_URL}/deletepost/${id}`, {
+    const response = await fetch(`${BASE_URL}/api/deletepost/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

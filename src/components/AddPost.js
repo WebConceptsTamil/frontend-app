@@ -25,7 +25,7 @@ function AddPost() {
     }
     try {
       setLoading(true);
-      const response = await fetch(`${process.env.BACKEND_URL}/createpost`, {
+      const response = await fetch(`${BASE_URL}/api/createpost`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

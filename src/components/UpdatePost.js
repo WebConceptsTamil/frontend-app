@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
 import { Link, useParams, useNavigate } from "react-router-dom";
+const BASE_URL = process.env.REACT_APP_BACKEND_URL
 
 function UpdatePost({ id }) {
   const params = useParams();
@@ -28,7 +29,7 @@ function UpdatePost({ id }) {
     try {
       setLoading(true);
       const response = await fetch(
-        `${process.env.BACKEND_URL}/updatepost/${postId}`,
+        `${BASE_URL}/api/updatepost/${postId}`,
         {
           method: "PUT",
           headers: {
