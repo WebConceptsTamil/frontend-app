@@ -8,7 +8,7 @@ import { BsPlusCircleFill } from "react-icons/bs";
 import { AiFillDelete } from "react-icons/ai";
 import { AiOutlineEdit } from "react-icons/ai";
 import { Link } from "react-router-dom";
-const BASE_URL = process.env.BACKEND_URL
+const BASE_URL = process.env.BACKENDURL
 
 
 function PostList() {
@@ -31,22 +31,21 @@ function PostList() {
     }
   };
 
-
+  const getPosts = async () => {
+    console.log(BASE_URL);
+    console.log(`${BASE_URL}/api/posts`);
+    const response = await fetch(`${BASE_URL}/api/posts`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    setPosts(data);
+    console.log(process.env.BACKEND_URL);
+console.log(BASE_URL);
+  };
 
   useEffect(() => {
-    const getPosts = async () => {
-      console.log(BASE_URL);
-      console.log(`${BASE_URL}/api/posts`);
-      const response = await fetch(`${BASE_URL}/api/posts`, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const data = await response.json();
-      setPosts(data);
-      console.log(process.env.BACKEND_URL);
-  console.log(BASE_URL);
-    };
     getPosts();
   }, []);
 
