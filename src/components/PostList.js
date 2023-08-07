@@ -18,7 +18,7 @@ function PostList() {
     if (!confirmation) {
       return;
     }
-    const response = await fetch(`http://localhost:5000/api/deletepost/${id}`, {
+    const response = await fetch(`${process.env.BACKEND_URL}/deletepost/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +30,7 @@ function PostList() {
   };
 
   const getPosts = async () => {
-    const response = await fetch("http://localhost:5000/api/posts", {
+    const response = await fetch(`${process.env.BACKEND_URL}/posts`, {
       headers: {
         "Content-Type": "application/json",
       },

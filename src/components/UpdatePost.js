@@ -28,7 +28,7 @@ function UpdatePost({ id }) {
     try {
       setLoading(true);
       const response = await fetch(
-        `http://localhost:5000/api/updatepost/${postId}`,
+        `${process.env.BACKEND_URL}/updatepost/${postId}`,
         {
           method: "PUT",
           headers: {
@@ -54,7 +54,7 @@ function UpdatePost({ id }) {
   useEffect(() => {
     const getSinglePost = async () => {
       const response = await fetch(
-        `http://localhost:5000/api/updatepost/${postId}`,
+        `${process.env.BACKEND_URL}/updatepost/${postId}`,
         {
           headers: {
             "Content-Type": "application/json",
