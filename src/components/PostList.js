@@ -30,7 +30,7 @@ function PostList() {
   };
 
   const getPosts = async () => {
-    const response = await fetch(`https://node-posts-api.onrender.com/api/posts`, {
+    const response = await fetch(`${process.env.BACKEND_URL}/api/posts`, {
       headers: {
         "Content-Type": "application/json",
       },
