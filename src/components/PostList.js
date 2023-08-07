@@ -31,21 +31,22 @@ function PostList() {
     }
   };
 
-  const getPosts = async () => {
-    console.log(BASE_URL);
-    console.log(`${BASE_URL}/api/posts`);
-    const response = await fetch(`${BASE_URL}/api/posts`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await response.json();
-    setPosts(data);
-    console.log(process.env.BACKEND_URL);
-console.log(BASE_URL);
-  };
+
 
   useEffect(() => {
+    const getPosts = async () => {
+      console.log(BASE_URL);
+      console.log(`${BASE_URL}/api/posts`);
+      const response = await fetch(`${BASE_URL}/api/posts`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await response.json();
+      setPosts(data);
+      console.log(process.env.BACKEND_URL);
+  console.log(BASE_URL);
+    };
     getPosts();
   }, []);
 
