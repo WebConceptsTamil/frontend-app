@@ -9,6 +9,8 @@ import { AiFillDelete } from "react-icons/ai";
 import { AiOutlineEdit } from "react-icons/ai";
 import { Link } from "react-router-dom";
 const BASE_URL = process.env.BACKEND_URL
+console.log(process.env.BACKEND_URL);
+console.log(BASE_URL);
 
 function PostList() {
   const [posts, setPosts] = useState([]);
